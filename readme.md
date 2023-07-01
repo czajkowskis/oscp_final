@@ -22,7 +22,7 @@ program(s) implementing synchronization algorithm that will allow:
 2. leaving the museum by people visiting hall B in the shortest possible time
 
 ## Implementation
-Multithreading approach with the use of conditional variables was used in the solution. There are two mutexes - one for each global variable which store number of free slots in each hall. There are three conditional variables to enforce priority of visitors leaving hall B over new vistors.
+Multithreading approach with the use of conditional variables was used in the solution. There are two mutexes - one for each global variable which stores the number of free slots in each hall. Priority of people leaving hall B over new vistors is enforced by allowing new visitors to enter the museum only if there are at least 2 spots free in hall A - one for them and one additonal for a person leaving from hall B.
 
 ## Compiling
 Make sure to compile with `cc -lpthread main.c`
